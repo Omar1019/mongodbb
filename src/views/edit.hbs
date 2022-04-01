@@ -1,0 +1,29 @@
+<body background="https://i.pinimg.com/originals/b9/d9/c2/b9d9c21025b5737b12dac4796b0e6d59.gif"></body>
+<div class="container">
+    <div class="row">
+        <div class="card card-body p-4 rounded-10 bg-danger text-white">
+            <h3>Recetas</h3>
+            <form action="/tasks/{{task._id}}/edit" method="post">
+            <div class="mb-3">
+                <label for="title" class="form-label">Nombre de la receta:</label>
+                <input type="text" class="form-control" id="title" placeholder="Title" name="title" value="{{task.title}}"/>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Ingredientes</label>
+                <textarea class="form-control" id="description" cols="80" name="ingredientes" placeholder="ingredientes">{{task.ingredientes}}</textarea>
+            </div>
+             <div class="mb-3">
+                <label for="description" class="form-label">Preparacion</label>
+                <textarea class="form-control" id="description" cols="80" name="preparacion" placeholder="Preparacion">{{task.preparacion}}</textarea>
+            </div>
+
+             <div class="mb-3">
+                <label for="description" class="form-label">Fecha</label>
+                <textarea class="form-control" id="description" cols="80" name="fecha" placeholder="DD/MM/AA">{{task.fecha}}</textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+<h1 style="color: black; text-align: center; background-color: white;">Converciones</h1>
+<br>    
+{{#if tasks}}
+  <table class="table table-bordered table-hover table-light">
+    <thead>
+      <tr>
+        <th scope="col">N°</th>
+        <th scope="col">Title</th>
+        <th scope="col">Moneda</th>
+        <th scope="col">Conversion</th>
+        <th scope="col">operaciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each tasks}}
+      {{#if done}}
+          <tr>
+          <th>{{@index}}</th>
+          <td><strong>{{title}}</strong></td>
+          <td>{{dinero}}</td>
+          <td>{{#pesoad dinero}}{{/pesoad}}</td>
+          <td>
+            {{#if done}}
+              {{!apertura del if}}
+              <a
+                class="btn btn-success"
+                href="/tasks/{{_id}}/toggleDone"
+              >Pesos->Dolar</a>
+            {{else}}
+              <a
+                class="btn btn-secondary"
+                href="/tasks/{{_id}}/toggleDone"
+              >Pesos->Dolar</a>
+            {{/if}}
+            {{!cierre del if}}  
+            <a class="btn btn-danger" href="/tasks/{{_id}}/delete">Delete</a>
+            <a class="btn btn-info" href="/tasks/{{_id}}/edit">Edit</a>
+          </td>
+        </tr>
+        {{else}}
+        <tr>
+          <th>{{@index}}</th>
+          <td><strong>{{title}}</strong></td>
+          <td>{{dinero}}</td>
+          <td>{{#pesoeu dinero}}{{/pesoeu}}</td>
+          <td>
+            {{#if done}}
+              {{!apertura del if}}
+              <a
+                class="btn btn-success"
+                href="/tasks/{{_id}}/toggleDone"
+              >Pesos->Euro</a>
+            {{else}}
+              <a
+                class="btn btn-secondary"
+                href="/tasks/{{_id}}/toggleDone"
+              >Pesos->Euro</a>
+            {{/if}}
+            {{!cierre del if}}  
+            <a class="btn btn-danger" href="/tasks/{{_id}}/delete">Delete</a>
+            <a class="btn btn-info" href="/tasks/{{_id}}/edit">Edit</a>
+          </td>
+        </tr>
+      {{/if}}
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+
+
+
+
+<div>
+  <div>
+    <h1 style="color: black; background-color: white;">No hay comidas</h1>
+<svg xmlns="http://www.w3.org/2000/svg" width="66" height="66" fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
+ <img src="https://cdn-icons-png.flaticon.com/512/527/527726.png"
+width="200" height="200">
+  </div>
+</div>
+{{/if}}
+
